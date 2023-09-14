@@ -1,0 +1,124 @@
+body {
+  background-color: #3f5f7a;
+}
+
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.toggle-btn {
+  border: 0;
+  background-color: #049dd2;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 3px;
+}
+
+/* Sidebar.css */
+.page-title {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.text-center {
+  text-align: center;
+}
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sidebar {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.73);
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding: 60px;
+  z-index: 1;
+  width: 100%;
+}
+
+.sidebar-list {
+  color: white;
+  width: 450px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: auto;
+  overflow-x: hidden;
+  z-index: 1;
+  background-color: #3f607a;
+  margin-block: 0;
+  list-style-type: none;
+  padding: 0 20px;
+}
+.sidebar-list-item {
+  margin: 10px;
+  list-style-type: none;
+  padding: 10px;
+}
+.sidebar-list-item.active {
+  background-color: #16232e;
+  border-radius: 6px;
+  padding: 10px;
+}
+.sidebar-list-item .arrow {
+  transform: rotate(-90deg);
+}
+
+.sidebar li {
+  cursor: pointer;
+  transition: all 0.3s;
+  list-style-type: none;
+}
+.nested-list {
+  padding-inline-start: 0px;
+}
+.nested-list a,
+button a {
+  color: white;
+  text-decoration: none;
+}
+.sidebar li .expanded {
+  transform: rotate(90deg);
+}
+.logo {
+  height: auto;
+  width: 30px;
+  margin-right: 10px;
+}
+.nested-list-item span {
+  display: flex;
+  margin-top: 10px;
+}
+
+/* service detail css */
+.service-detail {
+  padding: 50px 100px;
+  color: #fff;
+}
+.logo-lg {
+  margin-right: 10px;
+  height: auto;
+  width: 50px;
+}
+.info {
+  margin-bottom: 50px;
+}
+.contact-details li {
+  display: flex;
+  list-style-type: none;
+}
+.left-title {
+  width: 50px;
+}
