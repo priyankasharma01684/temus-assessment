@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Sidebar = ({ openServiceDetail }) => {
   const [providers, setProviders] = useState([]);
@@ -14,7 +14,7 @@ const Sidebar = ({ openServiceDetail }) => {
         setProviders(response.data.data);
       })
       .catch((error) => {
-        console.error("Error fetching providers:", error);
+        alert("Error fetching providers:", error);
       });
   }, []);
 
@@ -26,10 +26,10 @@ const Sidebar = ({ openServiceDetail }) => {
         setProvidersApi(response.data.apis);
       })
       .catch((error) => {
-        console.error("Error fetching service details:", error);
+        alert("Error fetching service details:", error);
       });
   };
- 
+
   return (
     <div className="sidebar">
       <ul className="sidebar-list">
@@ -57,23 +57,21 @@ const Sidebar = ({ openServiceDetail }) => {
                 {Object.keys(providersApis).map((key) => {
                   const api = providersApis[key];
                   const { info } = api;
-                  const imgURL = info?.["x-logo"]?.url || 'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png'
+                  const imgURL =
+                    info?.["x-logo"]?.url ||
+                    "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png";
                   return (
                     <li
                       key={key}
                       className="nested-list-item"
                       onClick={() => openServiceDetail(provider, api)}
                     >
-                         <Link to={`/detail/${provider}`}>
-   
-                      <span className="">
-                        <img
-                          src={imgURL}
-                          alt="logo"
-                          className="logo"
-                        />
-                        {info.title}
-                      </span></Link>
+                      <Link to={`/detail/${provider}`}>
+                        <span className="">
+                          <img src={imgURL} alt="logo" className="logo" />
+                          {info.title}
+                        </span>
+                      </Link>
                     </li>
                   );
                 })}
